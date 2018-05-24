@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="acR-RL-FGV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DisplayKeyValues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqR-yb-u08">
+                                <rect key="frame" x="10" y="64" width="355" height="371"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="371" id="oKS-Be-EPa"/>
+                                </constraints>
+                                <collectionViewLayout key="collectionViewLayout" id="kvA-Nq-qQr" customClass="CustomCollectionViewLayout" customModule="DisplayKeyValues" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bjx-Bs-Xdu" customClass="CategoryCollectionViewCell" customModule="DisplayKeyValues" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-2Q-jSA">
+                                                    <rect key="frame" x="4" y="36" width="113" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="QNQ-Fq-8Od"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta3-yo-XtA">
+                                                    <rect key="frame" x="3" y="6" width="114" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="z58-Ob-WW3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.15686274510000001" green="0.66666666669999997" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LM7-2Q-jSA" secondAttribute="trailing" constant="3" id="GIq-CU-fUL"/>
+                                            <constraint firstItem="LM7-2Q-jSA" firstAttribute="top" secondItem="ta3-yo-XtA" secondAttribute="bottom" constant="10" id="NRd-LU-3Zm"/>
+                                            <constraint firstAttribute="trailing" secondItem="ta3-yo-XtA" secondAttribute="trailing" constant="3" id="XLt-yX-Kwb"/>
+                                            <constraint firstItem="ta3-yo-XtA" firstAttribute="top" secondItem="bjx-Bs-Xdu" secondAttribute="top" constant="6" id="YBw-U1-xte"/>
+                                            <constraint firstItem="LM7-2Q-jSA" firstAttribute="leading" secondItem="bjx-Bs-Xdu" secondAttribute="leading" constant="4" id="bbp-U6-LR6"/>
+                                            <constraint firstItem="ta3-yo-XtA" firstAttribute="leading" secondItem="bjx-Bs-Xdu" secondAttribute="leading" constant="3" id="sbd-WI-HY0"/>
+                                        </constraints>
+                                        <size key="customSize" width="120" height="77"/>
+                                        <connections>
+                                            <outlet property="keyLabel" destination="ta3-yo-XtA" id="NP6-aI-NPQ"/>
+                                            <outlet property="valueLabel" destination="LM7-2Q-jSA" id="Q6h-ru-qJk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HfK-QI-uDC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MHF-hl-hAM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eqR-yb-u08" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="1b1-dy-idR"/>
+                            <constraint firstItem="eqR-yb-u08" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="ScZ-Ac-bjW"/>
+                            <constraint firstItem="eqR-yb-u08" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="yk4-fP-thc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="eqR-yb-u08" id="nea-9B-xf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="YC6-s4-71f">
+            <objects>
+                <viewController id="acR-RL-FGV" customClass="CategoryViewController" customModule="DisplayKeyValues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="feN-Ua-zc7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0045070280319999996" green="0.28940191859999997" blue="0.5457462072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6ap-xc-I4S"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0n-iI-yp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.79999999999995" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
