@@ -9,28 +9,31 @@
 import Foundation
 
 class CategoryModel {
-    let key : String
-    let value : String
+    let prefix : String
+    let firstname : String
+    let lastname : String
+    let state : String
+    let address : String
+    let country : String
     
-    init(key : String, value : String) {
-        self.key = key
-        self.value = value
+    
+    
+    
+    init(prefix : String, firstname : String, lastname : String, state : String, address : String, country : String) {
+        self.prefix = prefix
+        self.firstname = firstname
+        self.lastname = lastname
+        self.state = state
+        self.country = country
+        self.address = address
     }
     
-    class func categoryDataSource() -> [[CategoryModel]] {
-        return [[CategoryModel.init(key: "FName", value: "John"),
-                CategoryModel.init(key: "MName", value: "Wick"),
-                CategoryModel.init(key: "LName", value: "Rey"),
-                CategoryModel.init(key: "FName", value: "John"),
-                CategoryModel.init(key: "MName", value: "Wick"),
-                CategoryModel.init(key: "LName", value: "Rey")]]
-                /*
-                [CategoryModel.init(key: "Age", value: "29"),
-                CategoryModel.init(key: "Phone", value: "3938399283"),
-                CategoryModel.init(key: "Address", value: "4001 Dutchmans Ln, St Matthews, KY 40207, USA"),
-                CategoryModel.init(key: "Age", value: "29"),
-                CategoryModel.init(key: "Phone", value: "3938399283"),
-                CategoryModel.init(key: "Address", value: "4001 Dutchmans Ln, St Matthews, KY 40207, USA")]
-               ]*/
+    class func categoryDataSource() -> [CategoryModel] {
+        return [CategoryModel.init(prefix: "Mr", firstname: "Jon", lastname: "Snow", state: "PH", address: "114, Harrison, 114, Harrison,114, Harrison", country: "Edison"),
+                CategoryModel.init(prefix: "Mrs", firstname: "Marry", lastname: "Stark", state: "PH", address: "114, Harrison", country: "Edison"),
+                CategoryModel.init(prefix: "Mr", firstname: "Jon", lastname: "Snow", state: "PH", address: "114, Harrison", country: "Edison"),
+                CategoryModel.init(prefix: "Mr", firstname: "Jon", lastname: "Snow", state: "PH", address: "114, Harrison", country: "Edison"),
+                CategoryModel.init(prefix: "Mr", firstname: "Jon", lastname: "Snow", state: "PH", address: "114, Harrison", country: "Edison"),
+                CategoryModel.init(prefix: "Mr", firstname: "Jon", lastname: "Snow", state: "PH", address: "114, Harrison", country: "Edison")]
     }
 }
