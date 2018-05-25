@@ -74,25 +74,27 @@ class CategoryViewController: UIViewController {
         mainScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mainScrollView.setNeedsLayout()
         var previousDynamicHeight = 0
+        var previousMainScrollViewHeightAnchor = NSLayoutConstraint()
         for row in 0..<jsonModel.count {
             let personAllDetailsArray = jsonModel[row]
             let dynamicHeight = 77 * personAllDetailsArray.count //counting number of rows
             let mainScrollViewHeightAnchor = mainScrollView.heightAnchor.constraint(equalToConstant: CGFloat(dynamicHeight))
             mainScrollViewHeightAnchor.priority = UILayoutPriority(rawValue: 749)
             
-            if previousDynamicHeight < dynamicHeight {
+            if previousDynamicHeight <= dynamicHeight {
                 previousDynamicHeight = dynamicHeight
+                previousMainScrollViewHeightAnchor.isActive = false
                 mainScrollViewHeightAnchor.priority = UILayoutPriority(rawValue : 1000)
             }
             mainScrollViewHeightAnchor.isActive = true
-
+            previousMainScrollViewHeightAnchor = mainScrollViewHeightAnchor
             let newCustomView = UIView()
             newCustomView.backgroundColor = UIColor.white
             
             mainScrollView.addSubview(newCustomView)
             
             newCustomView.translatesAutoresizingMaskIntoConstraints = false
-            newCustomView.anchor(top: mainScrollView.topAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: mainScrollView.frame.size.width, height: CGFloat(dynamicHeight)))
+            newCustomView.anchor(top: mainScrollView.topAnchor, leading: nil, bottom: mainScrollView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: mainScrollView.frame.size.width, height: CGFloat(dynamicHeight)))
             
             if row == 0 {
                 newCustomView.leadingAnchor.constraint(equalTo: mainScrollView.leadingAnchor).isActive = true
